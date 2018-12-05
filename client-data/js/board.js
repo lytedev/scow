@@ -375,10 +375,15 @@ Tools.svg.height.baseVal.value = document.body.clientHeight;
 
 (function menu() {
 	var menu = document.getElementById("menu");
+	var menuText = document.getElementById("menu-toggle-text");
 	tog = document.getElementById("toggleMenu");
 
 	tog.onclick = function (e) {
 		menu.classList.toggle("closed");
+
+		// this may break the translation system...?
+		var isClosed = menu.classList.contains("closed");
+		menuText.textContent = isClosed ? "Menu" : "Hide";
 	};
 })();
 

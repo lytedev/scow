@@ -120,7 +120,7 @@
 	}
 
 	Tools.add({ //The new tool
-		"name": "Straight line",
+		"name": "Line",
 		"icon": "☇",
 		"listeners": {
 			"press": startLine,

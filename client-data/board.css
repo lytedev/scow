@@ -71,6 +71,8 @@ a:hover {
 	white-space: nowrap;
 	transition-duration: 0.2s;
 	cursor: pointer;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 #menu li:hover {
@@ -112,4 +114,14 @@ a:hover {
 	border: 0;
 	display: block;
 	margin:0 0.25em;
+}
+
+@media (max-width: 600px) {
+	body {
+		font-size: 14pt;
+	}
+
+	#menu {
+		width: 40vw;
+	}
 }
