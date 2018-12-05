@@ -3,23 +3,21 @@
       "collaborative",
       "whiteboard"
    ],
-   "version": "1.0.22",
+   "version": "1.0.2",
    "license": "GPL-3.0+",
    "dependencies": {
       "node-static": "0.7.x",
       "socket.io": "2.x"
    },
    "scripts": {
-      "start": "node ./server/server.js",
-      "deploy": "openode sync-n-reload -t $OPENODE_TOKEN -s $OPENODE_SITENAME"
+      "start": "node ./server/server.js"
    },
-   "name": "Whitebophir",
-   "description": "Online collaborative whiteboard",
+   "name": "SCOW",
+   "description": "Simple, Online Collaborative Whiteboard",
    "main": "./server/server.js",
-   "subdomain": "wbo",
    "repository": {
       "type": "git",
-      "url": "http://github.com/lovasoa/whitebophir.git"
+      "url": "http://github.com/lytedev/scow.git"
    },
    "devDependencies": {
       "openode": "^1.8.3"
