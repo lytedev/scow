@@ -48,8 +48,14 @@ h2 {
 	font-size: 200%;
 }
 
-body > main > h2 {
-	margin-bottom: 1em;
+body > main > header {
+	padding: 0.5em;
+	max-width: 600px;
+	margin-bottom: 0.5em;
+}
+
+body > main > header > h2 {
+	margin-bottom: 0.25em;
 }
 
 input, button, .input, .button {
@@ -60,6 +66,7 @@ input, button, .input, .button {
 	padding: 0.25em 0.8em;
 	border-radius: 0.1em;
 	box-shadow: 0 0.1em 0.25em rgba(0, 0, 0, 0.1), 0 0.05em 0.05em rgba(0, 0, 0, 0.2);
+	width: auto;
 }
 
 button:hover, .button:hover {
@@ -68,6 +75,7 @@ button:hover, .button:hover {
 .cards {
 	display: flex;
 	max-width: 900px;
+	max-width: 100vw;
 }
 
 .cards > .card {
@@ -102,3 +110,22 @@ form {
 form > input, form > button, form > .input, form > .button {
 	margin: 0.25em;
 }
+
+@media (max-width: 1000px) {
+	body {
+		font-size: 14pt;
+	}
+
+	.cards {
+		flex-direction: column;
+	}
+
+	form {
+		flex-wrap: wrap;
+	}
+
+	form > input, form > button, form > .input, form > .button {
+		width: 100%;
+	}
+}
+
