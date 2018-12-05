@@ -200,12 +200,12 @@ Tools.socket.on("broadcast", function (message) {
 
 Tools.unreadMessagesCount = 0;
 Tools.newUnreadMessage = function () {
-	document.title = "(" + (++Tools.unreadMessagesCount) + ") WBO";
+	document.title = "(" + (++Tools.unreadMessagesCount) + ") SCOW - Simple, Online Collaborative Whiteboard";
 };
 
 window.addEventListener("focus", function () {
 	Tools.unreadMessagesCount = 0;
-	document.title = "WBO";
+	document.title = "SCOW - Simple, Online Collaborative Whiteboard";
 });
 
 //List of hook functions that will be applied to messages before sending or drawing them
