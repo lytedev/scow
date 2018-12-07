@@ -1,7 +1,7 @@
 /**
  *                        WHITEBOPHIR
  *********************************************************
- * @licstart  The following is the entire license notice for the 
+ * @licstart  The following is the entire license notice for the
  *  JavaScript code in this page.
  *
  * Copyright (C) 2013  Ophir LOJKINE
@@ -26,12 +26,14 @@
 
 var Tools = {};
 
-Tools.board = document.getElementById("board");
-Tools.svg = document.getElementById("canvas");
 Tools.socket = io.connect('', {
 	"reconnection delay": 1, //Make the xhr connections as fast as possible
 });
+
+Tools.board = document.getElementById("board");
+Tools.svg = document.getElementById("canvas");
 Tools.curTool = null;
+
 Tools.boardName = (function () {
 	var path = window.location.pathname.split("/");
 	return path[path.length - 1];
@@ -140,7 +142,7 @@ Tools.change = function (toolName) {
 		Tools.board.addEventListener(event, listener, { 'passive': false });
 	}
 
-	//Call the start callback of the new tool 
+	//Call the start callback of the new tool
 	newtool.onstart(Tools.curTool);
 	Tools.curTool = newtool;
 };
@@ -403,17 +405,17 @@ if (!Math.hypot) {
 /**
  What does a "tool" object look like?
  newtool = {
- 	"name" : "SuperTool",
- 	"listeners" : {
- 		"press" : function(x,y,evt){...},
- 		"move" : function(x,y,evt){...},
-  		"release" : function(x,y,evt){...},
- 	},
- 	"draw" : function(data, isLocal){
- 		//Print the data on Tools.svg
- 	},
- 	"onstart" : function(oldTool){...},
- 	"onquit" : function(newTool){...},
- 	"stylesheet" : "style.css",
+	"name" : "SuperTool",
+	"listeners" : {
+		"press" : function(x,y,evt){...},
+		"move" : function(x,y,evt){...},
+			"release" : function(x,y,evt){...},
+	},
+	"draw" : function(data, isLocal){
+		//Print the data on Tools.svg
+	},
+	"onstart" : function(oldTool){...},
+	"onquit" : function(newTool){...},
+	"stylesheet" : "style.css",
 }
 */

@@ -84,13 +84,27 @@
 				var line = svg.getElementById(data['id']);
 				if (!line) {
 					console.error("Straight line: Hmmm... I received a point of a line that has not been created (%s).", data['id']);
-					createLine({ //create a new line in order not to loose the points
+					createLine({ //create a new line in order not to lose the points
 						"id": data['id'],
 						"x": data['x2'],
 						"y": data['y2']
 					});
 				}
 				updateLine(line, data);
+				break;
+			case "move":
+				var line = svg.getElementById(data['id']);
+				if (!line) {
+					console.error("Straight line: Hmmm... I received a point of a line that has not been created (%s).", data['id']);
+					createLine({ //create a new line in order not to lose the points
+						"id": data['id'],
+						"x": data['x1'],
+						"y": data['y1'],
+						"x2": data['x2'],
+						"y2": data['y2']
+					});
+				}
+				moveLine(line, data);
 				break;
 			default:
 				console.error("Straight Line: Draw instruction with unknown type. ", data);
@@ -119,12 +133,20 @@
 		line.y2.baseVal.value = data['y2'];
 	}
 
+	function moveLine(line, data) {
+		line.x1.baseVal.value = data['x1'];
+		line.y1.baseVal.value = data['y1'];
+		line.x2.baseVal.value = data['x2'];
+		line.y2.baseVal.value = data['y2'];
+	}
+
 	Tools.add({ //The new tool
 		"name": "Line",
-		"icon": "☇",
+		"icon": "📏",
 		"listeners": {
 			"press": startLine,
 			"move": continueLine,
+			"reposition": moveLine,
 			"release": stopLine,
 		},
 		"draw": draw,

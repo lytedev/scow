@@ -153,7 +153,7 @@
 
 	Tools.add({ //The new tool
 		"name": "Text",
-		"icon": "T",
+		"icon": "🔤",
 		"listeners": {
 			"press": clickHandler,
 		},

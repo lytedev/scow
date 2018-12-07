@@ -126,7 +126,7 @@
 
 	Tools.add({ //The new tool
 		"name": "Rectangle",
-		"icon": "▢",
+		"icon": "⬜",
 		"listeners": {
 			"press": start,
 			"move": move,

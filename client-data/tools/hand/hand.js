@@ -45,8 +45,8 @@
 	}
 
 	Tools.add({ //The new tool
-		"name": "Hand",
-		"icon": "✋",
+		"name": "Pan",
+		"icon": "💠",
 		"listeners": {
 			"press": press,
 			"move": move,

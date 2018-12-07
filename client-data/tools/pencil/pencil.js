@@ -175,8 +175,8 @@
 	}
 
 	Tools.add({ //The new tool
-		"name": "Pencil",
-		"icon": "✏",
+		"name": "Pen",
+		"icon": "🖊️",
 		"listeners": {
 			"press": startLine,
 			"move": continueLine,
